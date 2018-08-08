@@ -1,0 +1,11 @@
+﻿@model Xiao.D.Web.Models.Customers.CustomerModel
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+<form action="@Url.Action("Create")" method="post">
+    用户名：@Html.TextBoxFor(c => c.UserName)
+    密码：@Html.PasswordFor(c => c.Password)
+    <input type="submit" value="注册" />
+</form>

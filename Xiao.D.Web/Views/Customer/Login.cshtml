@@ -1,0 +1,55 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <link href="~/Content/jquery-easyui-1.5.3/themes/default/easyui.css" rel="stylesheet" />
+    <link href="~/Content/jquery-easyui-1.5.3/themes/icon.css" rel="stylesheet" />
+    <script src="~/Content/jquery-easyui-1.5.3/jquery.min.js"></script>
+    <script src="~/Content/jquery-easyui-1.5.3/jquery.easyui.min.js"></script>
+    <script src="~/Content/jquery-easyui-1.5.3/locale/easyui-lang-zh_CN.js"></script>
+    <script>
+        $(function () {
+            $('#l').window({
+                width: 300,
+                height: 300,
+                title: '登录',
+            })
+            $('#l').window("resize", { top: $(document).scrollTop() + ($(window).height() - 250) * 0.5 });//居中显示
+        })
+    </script>
+</head>
+<body>
+    <div id="l">
+        <form action="@Url.Action("Login")" method="post" style="text-align:center"> 
+            <table cellpadding="5">
+                <tr>
+                    <td><input class="easyui-textbox" data-options="prompt:'账号',validType:'name'" iconCls="icon-man" iconAlign=left style="width:100%;height:32px" /></td>
+                </tr>
+                <tr>
+                    <td><input class="easyui-textbox" data-options="prompt:'密码',validType:'password'" iconCls="icon-lock" iconAlign=left style="width:100%;height:32px"></input></td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" value="登录" class="easyui-linkbutton" />
+                    </td>
+                </tr>
+
+
+                @*<tr>
+                        <td>
+                            <input class="easyui-textbox" data-options="prompt:'验证码',validType:'validate'" iconCls="icon-filter" iconAlign=left style="width:55%;height:32px" />
+                            <img src="" alt="" width="56" height="32" align='absMiddle' />
+                        </td>
+                    </tr>*@
+            </table>
+        </form>
+    </div>
+</body>
+</html>
